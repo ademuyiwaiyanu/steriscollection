@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SterisCollection - premium clothing and curated fashion essentials." />
+    <meta name="theme-color" content="#020617" />
+    <title>SterisCollection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script type="module" src="./src/main.js" defer></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <div id="app" class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.18),transparent_35%),linear-gradient(180deg,#0f172a_0%,#020617_100%)]">
+      <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-8">
+          <a href="#home" class="inline-flex items-center gap-3 text-pink-300">
+            <img src="./src/img/steris%20logo.jpeg" alt="SterisCollection logo" class="h-20 w-30 rounded-full object-cover ring-1 ring-white/20" />
+            <span class="text-2xl font-semibold tracking-tight">SterisCollection</span>
+          </a>
+          <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+            <a href="#collections" class="transition hover:text-pink-300">Collections</a>
+            <a href="#products" class="transition hover:text-pink-300">Best Sellers</a>
+            <a href="#story" class="transition hover:text-pink-300">Our Story</a>
+            <a href="#newsletter" class="transition hover:text-pink-300">Subscribe</a>
+            <a id="loginNavLink" href="login.html" class="transition hover:text-pink-300">Login</a>
+          </nav>
+          <div class="flex items-center gap-2">
+            <button id="cartToggle" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm text-slate-200 transition hover:border-slate-500 hover:text-white">
+              Cart
+              <span id="cartCount" class="inline-flex h-6 min-w-[1.5rem] items-center justify-center rounded-full bg-pink-500 text-xs font-semibold text-white">0</span>
+            </button>
+            <button id="menuToggle" aria-controls="mobileNav" aria-expanded="false" class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm text-slate-200 transition hover:border-slate-500 hover:text-white md:hidden">
+              Menu
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div id="mobileNav" class="hidden fixed inset-x-0 top-[6rem] z-40 border-t border-slate-800 bg-slate-950/95 px-6 py-4 text-slate-200 md:hidden" aria-hidden="true">
+        <a href="#collections" class="block py-2 text-sm hover:text-white">Collections</a>
+        <a href="#products" class="block py-2 text-sm hover:text-white">Best Sellers</a>
+        <a href="#story" class="block py-2 text-sm hover:text-white">Our Story</a>
+        <a href="#newsletter" class="block py-2 text-sm hover:text-white">Subscribe</a>
+        <a id="loginMobileLink" href="login.html" class="block py-2 text-sm hover:text-white">Login</a>
+      </div>
+
+      <main class="mx-auto max-w-7xl px-6 pb-24 pt-[8rem] sm:px-8 lg:px-12">
+        <section id="home" class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div class="space-y-8">
+            <div class="inline-flex items-center gap-2 rounded-full bg-pink-500/10 px-4 py-2 text-sm text-pink-100 ring-1 ring-pink-500/25">
+              New season drop · 2026 lookbook
+            </div>
+            <div class="space-y-6">
+              <h1 class="max-w-3xl text-5xl font-extrabold tracking-tight text-pink-100 sm:text-6xl">
+                Curated premium streetwear made for the modern wardrobe.
+              </h1>
+              <p class="max-w-xl text-lg leading-8 text-slate-300">
+                Discover bold essentials, refined staples, and seasonal wears crafted for effortless confidence and everyday luxury.
+              </p>
+            </div>
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
+              <a href="#collections" class="inline-flex w-full items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 sm:w-auto">
+                Shop new arrivals
+              </a>
+              <a href="#story" class="inline-flex w-full items-center justify-center rounded-full border border-slate-700 bg-slate-900/90 px-8 py-4 text-sm font-semibold text-slate-100 transition hover:border-slate-500 sm:w-auto">
+                Explore the story
+              </a>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-300 shadow-soft">
+                <p class="text-xs uppercase tracking-[0.3em] text-pink-200">Quality</p>
+                <p class="mt-3 text-lg font-semibold text-pink-100">Luxurious wear with premium quality.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-300 shadow-soft">
+                <p class="text-xs uppercase tracking-[0.3em] text-pink-200">Sustainability</p>
+                <p class="mt-3 text-lg font-semibold text-pink-100">Conscious materials crafted for lifelong wear.</p>
+              </div>
+              <div class="rounded-3xl border border-slate-800 bg-slate-900/70 p-5 text-sm text-slate-300 shadow-soft">
+                <p class="text-xs uppercase tracking-[0.3em] text-pink-200">Fit</p>
+                <p class="mt-3 text-lg font-semibold text-pink-100">Designed for comfort and modern styling.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative isolate overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-soft sm:p-8">
+            <div class="absolute inset-x-0 top-0 -z-10 h-56 bg-[radial-gradient(circle_at_top,_rgba(96,165,250,0.2),transparent_60%)]" />
+            <div class="rounded-[1.75rem] bg-slate-950/60 p-6 sm:p-8">
+              <div class="mb-6 flex items-center justify-between rounded-3xl bg-slate-900/80 p-4 text-slate-300">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Featured</p>
+                  <p class="mt-2 text-lg font-semibold text-white">Oversized blazer set</p>
+                </div>
+                <span class="rounded-full bg-pink-500/10 px-3 py-1 text-xs uppercase tracking-[0.3em] text-pink-100">Best seller</span>
+              </div>
+              <div class="aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-slate-800">
+                <div class="h-full w-full bg-[linear-gradient(135deg,_rgba(56,189,248,0.15)_0%,_rgba(139,92,246,0.18)_40%,_rgba(15,23,42,0.6)_100%)] flex items-center justify-center">
+                  <div class="w-4/5 rounded-[1.5rem] bg-cover bg-center shadow-[0_18px_50px_rgba(0,0,0,0.35)]" style="padding-bottom:125%; background-image:url('./src/img/tops.jpeg')"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="collections" class="mt-20 space-y-10">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="text-sm uppercase tracking-[0.35em] text-pink-200">Collections</p>
+              <h2 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">Seasonal edit for every mood.</h2>
+            </div>
+            <p class="max-w-xl text-sm leading-6 text-slate-400">Explore curated looks built on elegant silhouettes, bold textures, and everyday versatility.</p>
+          </div>
+          <div class="grid gap-6 lg:grid-cols-3">
+            <a href="#new-arrivals" class="group block overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 transition hover:-translate-y-1 hover:border-pink-500">
+              <p class="text-xs uppercase tracking-[0.35em] text-pink-200">New Arrivals</p>
+              <h3 class="mt-5 text-xl font-semibold text-white">Urban essentials</h3>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Street-ready pieces with refined cuts and premium weight.</p>
+              <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-pink-100">
+                Shop the drop
+                <span aria-hidden="true">→</span>
+              </div>
+            </a>
+            <a href="#essentials" class="group block overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 transition hover:-translate-y-1 hover:border-pink-500">
+              <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Essentials</p>
+              <h3 class="mt-5 text-xl font-semibold text-white">Core pieces</h3>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Timeless basics with premium fabric and polished finishes.</p>
+              <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-pink-100">
+                View essentials
+                <span aria-hidden="true">→</span>
+              </div>
+            </a>
+            <a href="#seasonal" class="group block overflow-hidden rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 transition hover:-translate-y-1 hover:border-pink-500">
+              <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Seasonal</p>
+              <h3 class="mt-5 text-xl font-semibold text-white">Limited edition</h3>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Bold textures, elevated color, and statement outerwear.</p>
+              <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-pink-100">
+                Discover more
+                <span aria-hidden="true">→</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <section id="collection-details" class="mt-20 space-y-16">
+          <div class="space-y-6">
+            <p class="text-sm uppercase tracking-[0.35em] text-pink-200">Detailed collections</p>
+            <h2 class="text-3xl font-semibold text-white sm:text-4xl">Shop the full story for each drop.</h2>
+            <p class="max-w-3xl text-sm leading-7 text-slate-400">Tap any collection above to jump to a curated selection of items, pricing, and styling edits designed for Nigerian streetwear, everyday essentials, and seasonal standout pieces.</p>
+          </div>
+
+          <div id="new-arrivals" class="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 shadow-soft">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">New Arrivals</p>
+                <h3 class="mt-3 text-3xl font-semibold text-white">Nigerian streetwear and Unisex edit</h3>
+                <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400">Fresh drops made for the city, weekend vibes, and bold everyday style.</p>
+              </div>
+              <span class="rounded-full bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-100">Street energy</span>
+            </div>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/joggerss.jpeg" alt="Khaki utility joggers" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Joggers</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Alo utility joggers</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Relaxed fit with soft cotton and premium stretch.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦12,500</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt1.jpeg" alt="Soft jersey skipping gown" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">T shirt</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Baggy shirt</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Easy movement and layered street charm with a bold design.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦10,000</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt2.jpeg" alt="Distressed black denim" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">T shirt</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Thick T shirt</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Loose cut, and street-ready attitude.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦11,000</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/cap%20and%20bag.jpeg" alt="Oversized market shirt" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Bag And Cap</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Beautiful Bag And Cap</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">A stylish combination of a trendy bag and a comfortable cap.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦15,000</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="essentials" class="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 shadow-soft">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">UNISEX TEES</p>
+                <h3 class="mt-3 text-3xl font-semibold text-white">Refined everyday staples</h3>
+                <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400">Curated basics with premium textures, versatile layering, and everyday polish.</p>
+              </div>
+              <span class="rounded-full bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-100">Essence</span>
+            </div>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt3.jpeg" alt="Soft cotton crewneck" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Tee</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Soft cotton crewneck</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Clean cut with a luxe hand feel for daily layering.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦8,500</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt4.jpeg" alt="Tailored cargo trousers" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Baggy Shirts</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Oversized Market Shirt</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Bold prints and roomy comfort for every layered look.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦10,500</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt5.jpeg" alt="Ribbed lounge knit set" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Shirts</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Printed Cotton Shirt</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Comfort-first with subtle texture and modern shape.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦10,000</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="seasonal" class="rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 shadow-soft">
+            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Seasonal</p>
+                <h3 class="mt-3 text-3xl font-semibold text-white">Limited season highlights</h3>
+                <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-400">Standout pieces for the current season, designed to feel fresh, dramatic, and elevated.</p>
+              </div>
+              <span class="rounded-full bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-100">Seasonal</span>
+            </div>
+            <div class="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt6.jpeg" alt="Tonal bomber jacket" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">T shirt</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Oversized Market Shirt</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Bold prints and roomy comfort for every layered look.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦10,500</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/luxury%20gown.jpeg" alt="Statement knit dress" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Dress</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">beautiful gown</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Elevated gown with a modern twist.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦15,500</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+              <div class="product-card rounded-3xl border border-slate-800 bg-slate-950/80 p-6">
+                <div class="overflow-hidden rounded-[1.5rem] bg-slate-900">
+                  <img src="./src/img/t%20shirt7.jpeg" alt="Satin midi skirt" class="h-44 w-full object-cover" />
+                </div>
+                <p class="mt-5 text-sm uppercase tracking-[0.3em] text-slate-500">Shirt</p>
+                <h4 class="mt-3 text-xl font-semibold text-white">Nice design</h4>
+                <p class="mt-3 text-sm leading-6 text-slate-400">A stylish and comfortable shirt for any occasion.</p>
+                <div class="mt-6 flex items-center justify-between gap-4">
+                  <p class="text-lg font-semibold text-white">₦10,000</p>
+                  <button class="view-details-btn rounded-full bg-pink-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-pink-400">View details</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="products" class="mt-20 space-y-8">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p class="text-sm uppercase tracking-[0.35em] text-pink-200">Best sellers</p>
+              <h2 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">Shop the favorites.</h2>
+            </div>
+            <p class="max-w-xl text-sm leading-6 text-slate-400">Selected for texture, silhouette, and effortless layering.</p>
+          </div>
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <article class="overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-900/80 p-6 shadow-soft transition hover:-translate-y-1">
+              <div class="mb-6 overflow-hidden rounded-3xl bg-slate-800">
+                <div class="aspect-[4/3] bg-cover bg-center" style="background-image:url('./src/img/gown.jpg')"></div>
+              </div>
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Gown</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Elegant evening gown</h3>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Structured comfort for a modern layered look.</p>
+              <div class="mt-6 flex items-center justify-between text-sm font-semibold text-white">
+                <span>₦10,000</span>
+                <button type="button" class="add-to-cart text-pink-200 transition hover:text-white" data-name="Elegant evening gown" data-price="10000">Add to bag</button>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-900/80 p-6 shadow-soft transition hover:-translate-y-1">
+              <div class="mb-6 overflow-hidden rounded-3xl bg-slate-800">
+                <div class="aspect-[4/3] bg-cover bg-center" style="background-image:url('./src/img/gown2.jpg')"></div>
+              </div>
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Skirt</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Maxi skirt</h3>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Flattering skirt with a modern twist.</p>
+              <div class="mt-6 flex items-center justify-between text-sm font-semibold text-white">
+                <span>₦8,000</span>
+                <button type="button" class="add-to-cart text-pink-200 transition hover:text-white" data-name="A-line midi skirt" data-price="8000">Add to bag</button>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] border border-slate-800 bg-slate-900/80 p-6 shadow-soft transition hover:-translate-y-1">
+              <div class="mb-6 overflow-hidden rounded-3xl bg-slate-800">
+                <div class="aspect-[4/3] bg-cover bg-center" style="background-image:url('./src/img/jeans.jpg')"></div>
+              </div>
+              <p class="text-sm uppercase tracking-[0.3em] text-slate-500">Luxury Jeans</p>
+              <h3 class="mt-3 text-xl font-semibold text-white">Relaxed utility pants</h3>
+              <p class="mt-4 text-sm leading-6 text-slate-400">Minimal details built for everyday movement.</p>
+              <div class="mt-6 flex items-center justify-between text-sm font-semibold text-white">
+                <span>₦25,000</span>
+                <button type="button" class="add-to-cart text-pink-200 transition hover:text-white" data-name="Relaxed utility pants" data-price="25000">Add to bag</button>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="lookbook" class="mt-20 rounded-[2rem] border border-slate-800 bg-slate-900/80 p-8 shadow-soft">
+          <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Lookbook</p>
+              <h2 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">A visual edit of every new frame.</h2>
+              <p class="max-w-2xl text-sm leading-7 text-slate-400">A collection of new imagery showcasing the full SterisCollection story. Every photo is unique and styled for modern streetwear.</p>
+            </div>
+            <span class="rounded-full bg-pink-500/10 px-4 py-2 text-sm font-semibold text-pink-100">Photo story</span>
+          </div>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="0" src="./src/img/t%20shirt8.jpeg" alt="Street tee" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Streetwear</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Street tee</h3>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="1" src="./src/img/t%20shirt9.jpeg" alt="Daywear shirt" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Daywear</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Daywear shirt</h3>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="2" src="./src/img/t%20shirt10.jpeg" alt="Soft layer" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Layer</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Soft layer</h3>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="3" src="./src/img/basic%20top.jpg" alt="Elevated basics" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Essentials</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Elevated basics</h3>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="4" src="./src/img/gown3.jpg" alt="Night-ready piece" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Night</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Night-ready piece</h3>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="5" src="./src/img/up%20and%20down.jpg" alt="Modern jacket" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">men's Wear</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Quality up and down</h3>
+              </div>
+            </article>
+            <article class="overflow-hidden rounded-[1.75rem] bg-slate-950/80 shadow-soft">
+              <img data-admin-index="6" src="./src/img/luxury%20shirt.jpeg" alt="Luxury shirt" class="h-60 w-full object-cover" />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Luxury</p>
+                <h3 class="mt-3 text-xl font-semibold text-white">Luxury shirt</h3>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="story" class="mt-20 rounded-[2rem] border border-slate-800 bg-slate-900/80 p-10 shadow-soft sm:p-14">
+          <div class="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+            <div class="space-y-6">
+              <p class="text-sm uppercase tracking-[0.35em] text-pink-200">Our story</p>
+              <h2 class="text-3xl font-semibold text-white sm:text-4xl">A modern label built for everyday expression.</h2>
+              <p class="max-w-xl text-base leading-8 text-slate-300">SterisCollection blends minimal tailoring with bold streetwear sensibility. Each piece is designed to feel luxurious, comfortable, and wearable from the office to after-hours.</p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-3xl bg-slate-950/70 px-6 py-7 text-slate-300">
+                <p class="text-lg font-semibold text-white">Designed for movement</p>
+                <p class="mt-4 text-sm leading-6">Every silhouette offers freedom, intentional texture, and versatile layering.</p>
+              </div>
+              <div class="rounded-3xl bg-slate-950/70 px-6 py-7 text-slate-300">
+                <p class="text-lg font-semibold text-white">Responsible quality</p>
+                <p class="mt-4 text-sm leading-6">Premium sourcing and long-lasting construction keep your wardrobe refined.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="newsletter" class="mt-20 rounded-[2rem] border border-slate-800 bg-gradient-to-r from-slate-900/95 via-slate-950/95 to-slate-900/95 p-10 shadow-soft sm:p-14">
+          <div class="max-w-4xl space-y-6 text-center">
+            <p class="text-sm uppercase tracking-[0.35em] text-pink-200">Stay in the loop</p>
+            <h2 class="text-3xl font-semibold text-white sm:text-4xl">Join the list for exclusive drops and styling notes.</h2>
+            <p class="mx-auto max-w-2xl text-sm leading-7 text-slate-400">Subscribe to receive early access, curated updates, and seasonal styling guides from SterisCollection.</p>
+            <form id="newsletterForm" class="mt-8 grid gap-4 sm:grid-cols-[1fr_auto]">
+              <input type="email" placeholder="Enter your email" required class="w-full rounded-full border border-slate-700 bg-slate-950/90 px-6 py-4 text-sm text-white outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-500/30" />
+              <button type="submit" class="rounded-full bg-pink-500 px-6 py-4 text-sm font-semibold text-white transition hover:bg-pink-400">Subscribe</button>
+            </form>
+            <p id="newsletterMessage" class="text-sm text-slate-400"></p>
+          </div>
+        </section>
+      </main>
+
+      <div id="cartOverlay" class="fixed inset-0 z-40 hidden bg-black/60 backdrop-blur-sm"></div>
+      <aside id="cartDrawer" class="fixed right-0 top-0 z-50 h-full w-full max-w-md translate-x-full overflow-y-auto border-l border-slate-800 bg-slate-950/95 p-6 shadow-2xl transition-transform duration-300 ease-out md:w-[26rem]" aria-hidden="true">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-lg font-semibold text-white">Your cart</p>
+            <p class="text-sm text-slate-400">Review items before checkout.</p>
+          </div>
+          <button id="closeCart" class="rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm text-slate-200 transition hover:border-slate-500 hover:text-white">Close</button>
+        </div>
+        <p id="cartEmptyMessage" class="mt-6 text-sm text-slate-400">Your cart is empty.</p>
+        <div id="cartItems" class="mt-6 space-y-4"></div>
+        <div class="mt-6 border-t border-slate-800 pt-6">
+          <div class="flex items-center justify-between text-sm text-slate-300">
+            <span>Total</span>
+            <span id="cartTotal" class="text-base font-semibold text-white">₦0</span>
+          </div>
+          <button id="checkoutButton" class="mt-6 w-full rounded-full bg-pink-500 px-6 py-4 text-sm font-semibold text-white transition hover:bg-pink-400">Checkout</button>
+
+          <div class="mt-6 rounded-3xl border border-slate-800 bg-slate-900/80 p-5 text-sm text-slate-300">
+            <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Bank transfer details</p>
+            <p class="mt-3 text-sm text-slate-400">Transfer your payment to the account below and send the receipt on WhatsApp.</p>
+            <ul class="mt-4 space-y-2 text-slate-300">
+              <li><span class="font-semibold text-white">Platform:</span> Opay</li>
+              <li><span class="font-semibold text-white">Account name:</span> SterisCollection</li>
+              <li><span class="font-semibold text-white">Account number:</span> 9161328636</li>
+              <li><span class="font-semibold text-white">WhatsApp:</span> <a href="https://wa.me/2349161328636" class="text-pink-200 hover:text-pink-100">+234 916 132 8636</a></li>
+            </ul>
+            <p class="mt-4 text-sm text-slate-400">After payment, send your payment receipt to WhatsApp to confirm your order.</p>
+          </div>
+        </div>
+      </aside>
+
+      <div id="detailsOverlay" class="fixed inset-0 z-40 hidden bg-black/60 backdrop-blur-sm"></div>
+      <aside id="detailsDrawer" class="fixed right-0 top-0 z-50 h-full w-full max-w-md translate-x-full overflow-y-auto border-l border-slate-800 bg-slate-950/95 p-6 shadow-2xl transition-transform duration-300 ease-out md:w-[28rem]" aria-hidden="true">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-lg font-semibold text-white">Product details</p>
+            <p class="text-sm text-slate-400">See more info and add this item to your cart.</p>
+          </div>
+          <button id="closeDetails" class="rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-sm text-slate-200 transition hover:border-slate-500 hover:text-white">Close</button>
+        </div>
+        <div class="mt-6 space-y-6">
+          <img id="detailImage" src="" alt="Product detail" class="w-full rounded-[1.5rem] bg-slate-800 object-cover" />
+          <div class="space-y-3">
+            <h2 id="detailName" class="text-2xl font-semibold text-white"></h2>
+            <p id="detailPrice" class="text-xl font-semibold text-pink-200"></p>
+            <p id="detailDescription" class="text-sm leading-6 text-slate-400"></p>
+          </div>
+          <button id="detailsAddToCart" type="button" class="w-full rounded-full bg-pink-500 px-6 py-4 text-sm font-semibold text-white transition hover:bg-pink-400" data-name="" data-price="0">Add to cart</button>
+          <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-5 text-sm text-slate-300">
+            <p class="text-xs uppercase tracking-[0.35em] text-pink-200">Payment info</p>
+            <p class="mt-3 text-sm text-slate-400">Transfer to the account below or WhatsApp the payment receipt after checkout.</p>
+            <ul class="mt-4 space-y-2 text-slate-300">
+              <li><span class="font-semibold text-white">Account number:</span> 9161328636</li>
+              <li><span class="font-semibold text-white">WhatsApp:</span> <a href="https://wa.me/2349161328636" class="text-pink-200 hover:text-pink-100">+234 916 132 8636</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <footer class="border-t border-slate-800 bg-slate-950/90 px-6 py-10 text-slate-400 sm:px-8 lg:px-12">
+        <div class="mx-auto flex max-w-7xl flex-col gap-8 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p class="text-lg font-semibold text-pink-300">SterisCollection</p>
+            <p class="mt-3 max-w-md text-sm leading-6">Premium apparel for contemporary wardrobes. Clean design with a bold, minimalist attitude.</p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-3">
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.35em] text-pink-300">Shop</p>
+              <a href="#collections" class="mt-3 block text-sm hover:text-white">Collections</a>
+              <a href="#products" class="mt-2 block text-sm hover:text-white">Best Sellers</a>
+            </div>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.35em] text-pink-300">Company</p>
+              <a href="#story" class="mt-3 block text-sm hover:text-white">About</a>
+              <a href="#newsletter" class="mt-2 block text-sm hover:text-white">Newsletter</a>
+            </div>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.35em] text-pink-300">Contact</p>
+              <p class="mt-3 text-sm"> @steriscollection</p>
+              <p class="mt-2 text-sm">Follow on socials for style drops.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

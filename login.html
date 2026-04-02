@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="SterisCollection login page." />
+    <title>Login — SterisCollection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body class="bg-slate-950 text-slate-100 antialiased">
+    <div class="min-h-screen bg-[radial-gradient(circle_at_top,_rgba(99,102,241,0.18),transparent_35%),linear-gradient(180deg,#0f172a_0%,#020617_100%)] px-6 py-10 sm:px-10">
+      <header class="mx-auto flex max-w-7xl items-center justify-between pt-4">
+        <a href="./index.html" class="inline-flex items-center gap-3 text-pink-300 text-lg font-semibold">
+          <span>←</span>
+          Back to shop
+        </a>
+      </header>
+
+      <main class="mx-auto mt-12 max-w-xl rounded-[2rem] border border-slate-800 bg-slate-900/90 p-10 shadow-soft sm:p-14">
+        <p class="text-sm uppercase tracking-[0.35em] text-pink-200">Sign in</p>
+        <h1 class="mt-3 text-4xl font-semibold text-white">Login to your SterisCollection account</h1>
+        <p class="mt-4 text-sm leading-7 text-slate-400">Sign in to access your personalized shopping experience.</p>
+
+        <form id="loginForm" class="mt-10 space-y-6">
+          <div>
+            <label for="username" class="text-sm font-medium text-slate-200">Username or Email</label>
+            <input id="username" name="username" type="text" required class="mt-3 w-full rounded-3xl border border-slate-700 bg-slate-950/95 px-5 py-4 text-sm text-white outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20" />
+          </div>
+          <div>
+            <label for="password" class="text-sm font-medium text-slate-200">Password</label>
+            <input id="password" name="password" type="password" placeholder="••••••••" required class="mt-3 w-full rounded-3xl border border-slate-700 bg-slate-950/95 px-5 py-4 text-sm text-white outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-500/20" />
+          </div>
+
+          <div id="loginError" class="min-h-[2rem] text-sm text-pink-300"></div>
+
+          <button type="submit" class="w-full rounded-full bg-pink-500 px-6 py-4 text-sm font-semibold text-white transition hover:bg-pink-400">Sign in</button>
+
+          <p class="text-sm text-slate-400">If this is your first time, a new account is created automatically. Your cart is saved to your own account.</p>
+        </form>
+      </main>
+    </div>
+    <script src="./src/login.js" defer></script>
+  </body>
+</html>
