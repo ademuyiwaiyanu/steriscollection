@@ -1,4 +1,6 @@
-import './style.css';
+// import './style.css';
+import './style.css'
+import './login.js'
 
 const menuToggle = document.getElementById('menuToggle');
 const mobileNav = document.getElementById('mobileNav');
