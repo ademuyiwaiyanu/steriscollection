@@ -1,5 +1,6 @@
-const USER_STORE_KEY = 'storedUsers';
+import './style.css'
 const ADMIN_PASSWORD = 'admin123';
+const USER_STORE_KEY = 'users';
 const DEFAULT_USERS = {
   admin: { password: ADMIN_PASSWORD, email: 'admin@example.com', isAdmin: true },
   user: { password: 'user123', email: 'user@example.com', isAdmin: false },
@@ -11,7 +12,7 @@ const getStoredUsers = () => {
   if (!stored) return { ...DEFAULT_USERS };
 
   try {
-    return { ...DEFAULT_USERS, ...JSON.parse(stored) };
+   return { ...JSON.parse(stored), ...DEFAULT_USERS };
   } catch {
     return { ...DEFAULT_USERS };
   }
