@@ -1,6 +1,21 @@
 // import './style.css';
 import './style.css'
-import './login.js'
+
+const galleryImageUrlMap = {
+  't shirt8.jpeg': new URL('./img/t shirt8.jpeg', import.meta.url).href,
+  't shirt9.jpeg': new URL('./img/t shirt9.jpeg', import.meta.url).href,
+  't shirt10.jpeg': new URL('./img/t shirt10.jpeg', import.meta.url).href,
+  'basic top.jpg': new URL('./img/basic top.jpg', import.meta.url).href,
+  'gown3.jpg': new URL('./img/gown3.jpg', import.meta.url).href,
+  'up and down.jpg': new URL('./img/up and down.jpg', import.meta.url).href,
+  'luxury shirt.jpeg': new URL('./img/luxury shirt.jpeg', import.meta.url).href,
+};
+
+const resolveGalleryImageUrl = (src) => {
+  const normalized = src.replace(/^\.\/?src\/img\//, '');
+  const decoded = decodeURIComponent(normalized);
+  return galleryImageUrlMap[decoded] || src;
+};
 
 const menuToggle = document.getElementById('menuToggle');
 const mobileNav = document.getElementById('mobileNav');
@@ -363,7 +378,7 @@ const syncAdminGalleryImages = () => {
   document.querySelectorAll('[data-admin-index]').forEach((image) => {
     const index = Number(image.dataset.adminIndex);
     if (!Number.isNaN(index) && storedImages[index]) {
-      image.src = storedImages[index];
+      image.src = resolveGalleryImageUrl(storedImages[index]);
     }
   });
 };

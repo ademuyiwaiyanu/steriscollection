@@ -1,12 +1,12 @@
 const ADMIN_KEY = 'adminGalleryImages';
 const defaultGallery = [
-  './src/img/t%20shirt8.jpeg',
-  './src/img/t%20shirt9.jpeg',
-  './src/img/t%20shirt10.jpeg',
-  './src/img/basic%20top.jpg',
-  './src/img/gown3.jpg',
-  './src/img/up%20and%20down.jpg',
-  './src/img/luxury%20shirt.jpeg',
+  new URL('./img/t shirt8.jpeg', import.meta.url).href,
+  new URL('./img/t shirt9.jpeg', import.meta.url).href,
+  new URL('./img/t shirt10.jpeg', import.meta.url).href,
+  new URL('./img/basic top.jpg', import.meta.url).href,
+  new URL('./img/gown3.jpg', import.meta.url).href,
+  new URL('./img/up and down.jpg', import.meta.url).href,
+  new URL('./img/luxury shirt.jpeg', import.meta.url).href,
 ];
 
 const galleryContainer = document.getElementById('galleryContainer');
